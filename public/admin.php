@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="header">
-    <h1>Widget Corp</h1>
+    <h1>Black Swan</h1>
 </div>
 <div id="main">
     <div id="navigation">
