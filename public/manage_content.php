@@ -1,11 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+<?php require_once("../includes/functions.php"); ?>
+<?php include("../includes/layouts/header.php"); ?>
 
-<html lang="en">
-	<head>
-		<title>Variables</title>
-	</head>
-	<body>
+<div id="main" class="container-fluid">
+    <div id="navigation">
+        &nbsp;
+    </div>
+    <div id="page">
+        <h2>Manage Content</h2>
 
-	</body>
-</html>
+    </div>
+</div>
+
+<?php include("../includes/layouts/footer.php"); ?>
+
