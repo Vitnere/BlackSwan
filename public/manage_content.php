@@ -19,19 +19,24 @@ if (isset($_GET["subject"])) {
         <?php echo navigation($selected_subject_id, $selected_page_id); ?>
     </div>
     <div id="page">
-        <h2>Manage Content</h2>
         <?php
-            if(isset($selected_subject_id)) {
-                $current_subject = find_subject_by_id($selected_subject_id);?>
-
-                <p>Menu name: <?php echo $current_subject["menu_name"];
-            }elseif(isset($selected_page_id)){
+        if (isset($selected_subject_id)) {
+        $current_subject=find_subject_by_id($selected_subject_id); ?>
+        <h2>Manage subjects</h2>
+        <p>Menu name: <?php echo $current_subject["menu_name"];
+            }elseif (isset($selected_page_id)) {
+            $current_page=find_page_by_id($selected_page_id); ?>
+        </p>
+        <h2>Manage pages</h2>
+        <p>Menu name: <?php echo $current_page["menu_name"];
+            } elseif (isset($selected_page_id)) {
                 echo $selected_page_id;
-            }else{
-                echo ("Please select subject or page");
+            } else {
+                echo("Please select subject or page");
             }
-        ?>
-                </p>
+            ?>
+        </p>
+
     </div>
 </div>
 
