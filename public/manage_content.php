@@ -20,9 +20,18 @@ if (isset($_GET["subject"])) {
     </div>
     <div id="page">
         <h2>Manage Content</h2>
-        <?php echo $selected_subject_id; ?>
-        <?php echo $selected_page_id; ?>
+        <?php
+            if(isset($selected_subject_id)) {
+                $current_subject = find_subject_by_id($selected_subject_id);?>
 
+                <p>Menu name: <?php echo $current_subject["menu_name"];
+            }elseif(isset($selected_page_id)){
+                echo $selected_page_id;
+            }else{
+                echo ("Please select subject or page");
+            }
+        ?>
+                </p>
     </div>
 </div>
 
