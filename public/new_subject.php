@@ -10,6 +10,8 @@
         <?php echo navigation($current_subject, $current_page); ?>
     </div>
     <div id="page">
+        <?php $errors=errors(); ?>
+        <?php echo form_errors($errors); ?>
         <h2>Create Subject</h2>
 
         <form action="create_subject.php" method="post">
