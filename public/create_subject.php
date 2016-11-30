@@ -1,3 +1,4 @@
+<?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/db_connection.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 
@@ -23,10 +24,10 @@ if (isset($_POST['submit'])) {
 
     //3.Check the result
     if ($result) {
-        $message="Subject created. Success!";
+        $_SESSION["message"]="Subject created. Success!";
         redirect_to("manage_content.php");
     } else {
-        $message="Subject creation failed. Try again!";
+        $_SESSION["message"]="Subject creation failed. Try again!";
         redirect_to("new_subject.php");
     }
 
@@ -36,7 +37,6 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-
 
 <?php if (isset($connection)) {
     mysqli_close($connection);
