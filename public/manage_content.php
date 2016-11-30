@@ -5,6 +5,8 @@
 
 <?php find_selected_page(); ?>
 
+
+
 <div id="main">
     <div id="navigation">
         <?php echo navigation($current_subject, $current_page); ?>
