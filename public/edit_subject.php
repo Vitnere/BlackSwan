@@ -6,8 +6,8 @@
 
 <!-- Bug report
 
-0.1 Session message style doesnt apply on create/edit subject
-0.2 Errors doesnt work on edit_subject
+Fixed -Session message style doesnt apply on create/edit subject
+Fixed -  Errors doesnt work on edit_subject
 
 -->
 
@@ -73,6 +73,7 @@ if (isset($_POST['submit'])) {
         <?php echo navigation($current_subject, $current_page); ?>
     </div>
     <div id="page">
+        <?php echo form_errors($errors); ?>
         <?php // $message is just a variable, doesn't use the SESSION
         if (!empty($message)) {
             echo "<div class=\"message\">" . htmlentities($message) . "</div>";
