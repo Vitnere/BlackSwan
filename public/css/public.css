@@ -1,11 +1,3 @@
-/* Site Colors:
-  #1A446C - blue grey
-  #689DC1 - light blue
-  #D4E6F4 - very light blue
-  #EEE4B9 - light tan
-  #8D0D19 - burgundy
-*/
-
 html {
     height: 100%;
     width: 100%;
@@ -121,6 +113,13 @@ ul.pages {
     color: #8D0D19;
 }
 
+.view-content {
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #999;
+
+}
+
 div.message {
     border: 2px solid #000000;
     color: #3399FF;
@@ -128,3 +127,21 @@ div.message {
     margin: 1em 0;
     padding: 1em;
 }
+
+/* errors */
+.error {
+    color: #000;
+    border: 2px solid #c03b44;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+.error ul {
+    padding-left: 2em;
+}
+
+.error ul > li {
+    list-style-type: none;
+}
+
+
