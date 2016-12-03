@@ -2,14 +2,8 @@
 <?php require_once("../includes/db_connection.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+
 <?php find_selected_page(); ?>
-
-<!-- Bug report
-
-Fixed -Session message style doesnt apply on create/edit subject
-Fixed -  Errors doesnt work on edit_subject
-
--->
 
 <?php
 if (!$current_subject) {
@@ -17,9 +11,6 @@ if (!$current_subject) {
     // subject couldn't be found in database
     redirect_to("manage_content.php");
 }
-?>
-
-<?php
 
 if (isset($_POST['submit'])) {
 
@@ -49,11 +40,11 @@ if (isset($_POST['submit'])) {
         $result=mysqli_query($connection, $query);
 
         //Check the result
-        if ($result && mysqli_affected_rows($connection)==1) {
+        if ($result && mysqli_affected_rows($connection) == 1) {
             $_SESSION["message"]="Subject updated. Success!";
             redirect_to("manage_content.php");
         } else {
-           $message="Subject update failed. Try again!";
+            $message="Subject update failed. Try again!";
         }
     }
 
@@ -63,8 +54,6 @@ if (isset($_POST['submit'])) {
 }//end:if (isset($_POST['submit']))
 
 ?>
-
-
 
 <?php include("../includes/layouts/header.php"); ?>
 
@@ -119,6 +108,10 @@ if (isset($_POST['submit'])) {
         </form>
         <br/>
         <a href="manage_content.php">Cancel</a>
+        &nbsp
+        &nbsp
+        <a href="delete_subject.php?subject=<?php echo $current_subject["id"] ?>"
+           onclick="return confirm('Are you sure?')">Delete</a>
 
     </div>
 </div>
